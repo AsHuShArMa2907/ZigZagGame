@@ -7,6 +7,8 @@ public class BallController : MonoBehaviour
     [SerializeField] private float speed;
     Rigidbody rb;
     bool started;
+    bool gameOver;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -15,6 +17,7 @@ public class BallController : MonoBehaviour
     void Start()
     {
         started = false;
+        gameOver = false;
     }
 
     void Update()
@@ -27,7 +30,14 @@ public class BallController : MonoBehaviour
                 started = true;
             }
         }
-        if (Input.GetMouseButtonDown (0))
+        Debug.DrawRay(transform.position, Vector3.down, Color.red);
+        if (!Physics.Raycast(transform.position, Vector3.down, 1f))
+        {
+            gameOver = true;
+            rb.velocity = new Vector3(0,-25f,0);
+        }
+
+        if (Input.GetMouseButtonDown (0) && !gameOver)
         {
             SwitchDirection();
         }
