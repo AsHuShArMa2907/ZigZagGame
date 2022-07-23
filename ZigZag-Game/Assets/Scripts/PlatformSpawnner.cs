@@ -8,7 +8,7 @@ public class PlatformSpawnner : MonoBehaviour
     float size;
     public GameObject Platform;
     public bool gameOver;
-
+    public GameObject diamond;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +52,12 @@ public class PlatformSpawnner : MonoBehaviour
         pos.x += size;
         lastpos = pos;
         Instantiate(Platform,pos, Quaternion.identity);
+
+        int rand1 = Random.Range(0, 4);
+        if (rand1 < 1)
+        {
+                Instantiate(diamond , new Vector3 (pos.x,pos.y+1,pos.z), diamond.transform.rotation);
+        }
     }
     void SpawnZ()
     {
@@ -59,6 +65,12 @@ public class PlatformSpawnner : MonoBehaviour
         pos.z += size;
         lastpos = pos;
         Instantiate(Platform, pos, Quaternion.identity);
+
+        int rand1 = Random.Range(0, 4);
+        if (rand1 < 1)
+        {
+            Instantiate(diamond, new Vector3(pos.x, pos.y + 1, pos.z), diamond.transform.rotation);
+        }
 
     }
 }
