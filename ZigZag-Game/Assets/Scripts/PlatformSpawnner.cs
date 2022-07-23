@@ -7,6 +7,7 @@ public class PlatformSpawnner : MonoBehaviour
     Vector3 lastpos;
     float size;
     public GameObject Platform;
+    public bool gameOver;
 
 
     // Start is called before the first frame update
@@ -15,15 +16,34 @@ public class PlatformSpawnner : MonoBehaviour
         lastpos = Platform.transform.position;
         size = Platform.transform.localScale.x;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 20; i++)
         {
-            SpawnZ();
+            SpawnPlatform();
         }
+        InvokeRepeating("SpawnPlatform", 3f, 0.3f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gameOver)
+        {
+            CancelInvoke("SpawnPlatform");
+        }
+    }
+
+    void SpawnPlatform()
+    {
+        
+        int rand = Random.Range(0,6);
+        if (rand < 3)
+        {
+            SpawnX();
+        }
+        else if (rand >= 3)
+        {
+            SpawnZ();
+        }
     }
 
     void SpawnX()
