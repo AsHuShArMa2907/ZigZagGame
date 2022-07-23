@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Platform: {fileID: 4265784056172976166, guid: 4690f5f6a3ed8a94b9494345afa9bd06, type: 3}
+  gameOver: 0
 --- !u!1 &396044488
 GameObject:
   m_ObjectHideFlags: 0
