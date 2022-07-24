@@ -8,6 +8,7 @@ public class BallController : MonoBehaviour
     Rigidbody rb;
     bool started;
     bool gameOver;
+    public GameObject particle;
 
     void Awake()
     {
@@ -60,7 +61,9 @@ public class BallController : MonoBehaviour
     {
         if(col.gameObject.tag == "Diamond")
         {
+            GameObject particles = Instantiate(particle, col.gameObject.transform.position, Quaternion.identity) as GameObject;
             Destroy(col.gameObject);
+            Destroy(particles,1f);
         }
     }
 }
