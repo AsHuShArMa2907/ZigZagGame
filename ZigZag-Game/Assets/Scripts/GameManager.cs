@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameOver = false;
+
     }
 
     // Update is called once per frame
@@ -31,10 +32,12 @@ public class GameManager : MonoBehaviour
     {
         UIManager.instance.GameStart();
         ScoreManager.instance.startScore();
+        GameObject.Find("PlatformSpawnner").GetComponent<PlatformSpawnner>().startSpawnPlatform();
     }
     public void GameOver()
     {
         UIManager.instance.GameOver();
         ScoreManager.instance.stopScore();
+        gameOver = true;
     }
 }

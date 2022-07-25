@@ -24,16 +24,20 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        highscore1.text ="High Score:  "+ PlayerPrefs.GetInt("highscore");
     }
 
     public void GameStart()
     {
+       
         tapText.SetActive(false);
         zigzagPanel.GetComponent<Animator>().Play("panelUp");
     }
+
     public void GameOver()
     {
+        score.text = PlayerPrefs.GetInt("score").ToString();
+        highscore2.text = PlayerPrefs.GetInt("highscore").ToString();
         GameOverPanel.SetActive(true);
     }
 
