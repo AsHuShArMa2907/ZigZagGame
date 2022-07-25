@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
         tapText.SetActive(false);
         zigzagPanel.GetComponent<Animator>().Play("panelUp");
     }
-    public void GameOvert()
+    public void GameOver()
     {
         GameOverPanel.SetActive(true);
     }

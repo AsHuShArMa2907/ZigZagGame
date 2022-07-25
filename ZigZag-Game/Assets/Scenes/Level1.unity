@@ -238,7 +238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &72586851
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1017,6 +1017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237b9990ad22d7e4586beadbb4cf4b1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: 0
 --- !u!4 &569840733
 Transform:
   m_ObjectHideFlags: 0
@@ -1784,6 +1785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f54d75ed1541d4fbe3b9eec6d0d7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  highscore: 0
 --- !u!4 &1518914069
 Transform:
   m_ObjectHideFlags: 0
@@ -2102,7 +2105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa0a9630a4b4054396a9f56fa77efed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zigzagPanel: {fileID: 0}
+  zigzagPanel: {fileID: 806793969}
   GameOverPanel: {fileID: 677254427}
   tapText: {fileID: 72586850}
   score: {fileID: 359606576}
